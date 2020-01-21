@@ -1,0 +1,3 @@
+command: split 
+
+make it a GUI => .exe file
