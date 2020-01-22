@@ -80,4 +80,16 @@ while i ~= length(MGTstr)
     end
     Load{j} = LoadTemp;
 end
+LCempty = [];
+for i = 1:length(LoadCase)
+    if isempty(Load{i})
+        LCempty = [LCempty, i];
+    end
+end
+for i = 1:length(LCempty)
+    temp = LCempty(i);
+    LCempty = LCempty-1;
+    LoadCase = [LoadCase(1:(temp-1),:); LoadCase((temp+1):end,:)];
+    Load = {Load{1:(temp-1)}, Load{(temp+1):end}};
+end
 end

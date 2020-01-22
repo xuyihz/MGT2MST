@@ -36,7 +36,7 @@ while i ~= length(LOGstr)
         end
     end
     if flag == 1
-       break 
+        break
     end
     indexLCEnd = indexLCStart;
     while strcmp(char2, LoadCase(indexLCEnd,1))
@@ -64,6 +64,7 @@ while i ~= length(LOGstr)
         end
         LOGstr = [ LOGstr(1:i); LoadLOGstr; LOGstr(i+1:end) ];
         i = i + length(LoadLOGstr);
+        clear LoadLOGstr
     end
 end
 end
