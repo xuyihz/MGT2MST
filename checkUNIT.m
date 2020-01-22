@@ -15,7 +15,7 @@ if i == length(MGTstr) % no '*UNIT' in MGTstr
 else
     strTempEnd1 = '';
     strTempEnd2 = '';
-    while ~strcmp( strTempEnd1, 'N' ) || ~strcmp( strTempEnd2, 'N' )
+    while ~strcmp( strTempEnd1, 'N' ) && ~strcmp( strTempEnd2, 'N' )
         i = i+1;
         strTemp = str1Temp(i, MGTstr);
         if isempty(strTemp)

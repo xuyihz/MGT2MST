@@ -11,11 +11,17 @@ for i = 1:length(FILEfilename)
         break
     end
 end
+for i = 1:length(FILEfilename)
+    if strcmp(FILEfilename(end+1-i), '.' )
+        suffixName = length(FILEfilename)+1-i;
+        break
+    end
+end
 newFILEfilename = [ FILEfilename(1:prefixStart), prefix,...
-    FILEfilename(prefixStart+1:end-4), suffix, '.mgt' ];
+    FILEfilename(prefixStart+1:end-4), suffix, FILEfilename(suffixName:end) ];
 fileID = fopen(newFILEfilename,'w'); % Open or create new file for writing. Discard existing contents, if any.
 for i = 1:length(FILEstr)
-    fprintf(fileID, '%s\n', FILEstr(i));
+    fprintf(fileID, '%s\r\n', FILEstr(i));
 end
 fclose('all');
 end
